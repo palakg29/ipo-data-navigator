@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
 
 const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,9 +23,20 @@ const AdminLogin = () => {
     console.log('Google login clicked');
   };
 
+  const handleDemoLogin = () => {
+    setEmail('admin@bluestock.in');
+    setPassword('admin123');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-sm p-8">
+        {/* Back Button */}
+        <Link to="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Home
+        </Link>
+
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-2">
@@ -33,6 +45,20 @@ const AdminLogin = () => {
             </div>
             <span className="text-2xl font-bold text-gray-900">BLUESTOCK</span>
           </div>
+        </div>
+
+        {/* Demo Credentials */}
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 className="text-sm font-medium text-blue-900 mb-2">Demo Admin Credentials</h3>
+          <p className="text-sm text-blue-700">Email: admin@bluestock.in</p>
+          <p className="text-sm text-blue-700">Password: admin123</p>
+          <Button 
+            type="button" 
+            onClick={handleDemoLogin}
+            className="mt-2 text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1"
+          >
+            Use Demo Login
+          </Button>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">

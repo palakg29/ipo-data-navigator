@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { Search, Bell, User, ChevronDown, Eye } from 'lucide-react';
+import { Search, Bell, ChevronDown, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
 import AdminSidebar from '@/components/AdminSidebar';
 
 const AdminDashboard = () => {
@@ -15,6 +16,11 @@ const AdminDashboard = () => {
         <header className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
+              <Link to="/" className="inline-flex items-center text-gray-600 hover:text-gray-900">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Home
+              </Link>
+              <div className="h-6 border-l border-gray-300"></div>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <Input

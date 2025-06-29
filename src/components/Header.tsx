@@ -47,19 +47,14 @@ const Header = () => {
           </nav>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-gray-900 font-medium">Sign In</button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">Sign Up Now</Button>
+          <div className="hidden md:flex items-center space-x-3">
+            <button className="text-gray-600 hover:text-gray-900 font-medium px-4 py-2">Sign In</button>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2">Sign Up Now</Button>
             <Link to="/admin/login">
-              <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+              <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50 px-4 py-2">
                 Admin Portal
               </Button>
             </Link>
-            <button className="p-2 text-gray-600 hover:text-gray-900">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
           </div>
 
           {/* Mobile Menu Button */}

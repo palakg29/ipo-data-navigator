@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 const AdminForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -16,6 +17,12 @@ const AdminForgotPassword = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-sm p-8">
+        {/* Back Button */}
+        <Link to="/admin/login" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Login
+        </Link>
+
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-2">
