@@ -5,25 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 
 const Header = () => {
-  const { user, signOut } = useAuth();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about-section');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToFooter = () => {
-    const footer = document.getElementById('footer');
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { user } = useAuth();
 
   return (
     <header className="bg-white border-b border-gray-200">
@@ -39,24 +21,10 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={scrollToTop}
-              className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
-            >
-              Home
-            </button>
-            <button 
-              onClick={scrollToAbout}
-              className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
-            >
-              About
-            </button>
-            <button 
-              onClick={scrollToFooter}
-              className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
-            >
-              Contact
-            </button>
+            <Link to="/" className="text-gray-600 hover:text-gray-900">Home</Link>
+            <Link to="#ipos" className="text-gray-600 hover:text-gray-900">IPOs</Link>
+            <Link to="#about" className="text-gray-600 hover:text-gray-900">About</Link>
+            <Link to="#contact" className="text-gray-600 hover:text-gray-900">Contact</Link>
           </nav>
 
           {/* Auth Buttons */}
@@ -64,38 +32,21 @@ const Header = () => {
             {user ? (
               <>
                 <Link to="/dashboard">
-                  <Button 
-                    variant="outline" 
-                    className="transition-all duration-300 hover:scale-105 hover:shadow-md"
-                  >
-                    Dashboard
-                  </Button>
+                  <Button variant="outline">Dashboard</Button>
                 </Link>
                 <Link to="/ipo-management">
-                  <Button className="bg-purple-600 hover:bg-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <Button className="bg-purple-600 hover:bg-purple-700">
                     Manage IPOs
                   </Button>
                 </Link>
-                <Button 
-                  onClick={signOut}
-                  variant="outline"
-                  className="transition-all duration-300 hover:scale-105 hover:shadow-md hover:border-red-500 hover:text-red-500"
-                >
-                  Logout
-                </Button>
               </>
             ) : (
               <>
                 <Link to="/auth">
-                  <Button 
-                    variant="outline"
-                    className="transition-all duration-300 hover:scale-105 hover:shadow-md"
-                  >
-                    Sign In
-                  </Button>
+                  <Button variant="outline">Sign In</Button>
                 </Link>
                 <Link to="/admin/login">
-                  <Button className="bg-purple-600 hover:bg-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <Button className="bg-purple-600 hover:bg-purple-700">
                     Admin Login
                   </Button>
                 </Link>
