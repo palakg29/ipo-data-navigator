@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Calendar, Filter } from 'lucide-react';
+import { search, Calendar, Filter } from 'lucide-react';
 
 interface IPOSearchProps {
   onSearch: (searchTerm: string) => void;
@@ -43,7 +43,7 @@ const IPOSearch = ({ onSearch, onFilterByStatus, onFilterByDate, currentStatus }
         {/* Search Bar */}
         <form onSubmit={handleSearch} className="flex-1 flex gap-2">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="text"
               placeholder="Search IPOs by company name..."
