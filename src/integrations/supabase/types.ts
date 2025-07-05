@@ -9,7 +9,104 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      ipos: {
+        Row: {
+          close_date: string
+          company_name: string
+          created_at: string
+          description: string | null
+          id: string
+          issue_size: string
+          issue_type: string
+          listing_date: string | null
+          open_date: string
+          price_max: number
+          price_min: number
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          close_date: string
+          company_name: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          issue_size: string
+          issue_type?: string
+          listing_date?: string | null
+          open_date: string
+          price_max: number
+          price_min: number
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          close_date?: string
+          company_name?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          issue_size?: string
+          issue_type?: string
+          listing_date?: string | null
+          open_date?: string
+          price_max?: number
+          price_min?: number
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          full_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          full_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_subscriptions: {
+        Row: {
+          id: string
+          ipo_id: string
+          subscribed_at: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          ipo_id: string
+          subscribed_at?: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          ipo_id?: string
+          subscribed_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_subscriptions_ipo_id_fkey"
+            columns: ["ipo_id"]
+            isOneToOne: false
+            referencedRelation: "ipos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
