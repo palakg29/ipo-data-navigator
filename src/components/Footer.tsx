@@ -1,96 +1,145 @@
 
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-gray-900 text-white">
+    <footer id="footer" className="bg-white border-t">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-purple-400">BlueStock</h3>
-            <p className="text-gray-300 leading-relaxed">
-              Your trusted partner for IPO investments. We provide comprehensive information and tools to help you make informed investment decisions.
-            </p>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-400/30 p-2 rounded-full hover:bg-purple-400/10"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400/30 p-2 rounded-full hover:bg-blue-400/10"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-pink-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-400/30 p-2 rounded-full hover:bg-pink-400/10"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-600/30 p-2 rounded-full hover:bg-blue-600/10"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">IPO Calendar</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Investment Guide</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Market Analysis</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Research Reports</a></li>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          {/* Resources */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Resources</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Trading View</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">NSE Holidays</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">e-Voting CDSL</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">e-Voting NSDL</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Market Timings</a></li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Services</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">IPO Applications</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Portfolio Management</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Investment Advisory</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Market Insights</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">Risk Assessment</a></li>
+          {/* Company */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Careers</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Contact Us</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">About Us</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Community</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Blogs</a></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact Us</h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">info@bluestock.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">+91 98765 43210</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">Mumbai, Maharashtra, India</span>
-              </div>
-            </div>
+          {/* Offerings */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Offerings</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Compare Broker</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Fin Calculators</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">IPO</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">All Brokers</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Products</a></li>
+            </ul>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Links</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Shark Investor</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Mutual Funds</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Sitemap</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Indian Indices</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Bug Bounty Program</a></li>
+            </ul>
+          </div>
+
+          {/* Policy */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Policy</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Terms & Conditions</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Privacy Policy</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Refund Policy</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Disclaimer</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105">Trust & Security</a></li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 BlueStock. All rights reserved. | 
-            <a href="#" className="text-purple-400 hover:text-purple-300 ml-1">Privacy Policy</a> | 
-            <a href="#" className="text-purple-400 hover:text-purple-300 ml-1">Terms of Service</a>
-          </p>
+        {/* Bottom Section */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0">
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              <a href="#" className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-300 hover:rotate-3">
+                <span className="text-white text-sm">f</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-red-600 rounded flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-300 hover:-rotate-3">
+                <span className="text-white text-sm">Y</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-blue-700 rounded flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400 hover:rotate-3">
+                <span className="text-white text-sm">in</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-pink-600 rounded flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-300 hover:-rotate-3">
+                <span className="text-white text-sm">@</span>
+              </a>
+              <a href="#" className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-300 hover:rotate-3">
+                <span className="text-white text-sm">t</span>
+              </a>
+            </div>
+
+            {/* Company Info */}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-8 space-y-4 lg:space-y-0">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-md flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">B</span>
+                </div>
+                <span className="text-xl font-bold text-gray-900">BLUESTOCK</span>
+              </div>
+              
+              <div className="text-sm text-gray-600">
+                <p>Bluestock Fintech</p>
+                <p>Pune, Maharashtra</p>
+                <p className="mt-2">MSME Registration No:</p>
+                <p>UDYAM-MH-01-0138001</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Startup India Logo */}
+          <div className="mt-8 flex justify-center">
+            <div className="flex items-center">
+              <span className="text-orange-600 font-bold text-xl transition-all duration-300 hover:scale-105">#startupindia</span>
+            </div>
+          </div>
+
+          {/* Legal Text */}
+          <div className="mt-8 text-xs text-gray-500 space-y-4">
+            <p>
+              Investment in securities markets are subject to market risks, read all the related documents carefully before investing as 
+              prescribed by SEBI. Issued in the interest of the investors.
+            </p>
+            <p>
+              The users can write to <a href="mailto:hello@bluestock.in" className="text-blue-600 hover:text-blue-800 transition-colors duration-300">hello@bluestock.in</a> for any app, website related queries. Also you can send IT / Tech related feedback to 
+              <a href="mailto:cto@bluestock.in" className="text-blue-600 hover:text-blue-800 transition-colors duration-300 ml-1">cto@bluestock.in</a>
+            </p>
+            <p>
+              Disclaimer: We are not a SEBI registered research analyst company. We do not provide any kind of stock recommendations, buy/ 
+              sell stock tips, or investment and trading advice. All the stock scripts shown in the Bluestock app, website, all social media handles 
+              are for educational purposes only.
+            </p>
+            <p>
+              Before making any investment in the financial market, it is advisable to consult with your financial advisor. Remember that stock 
+              markets are subject to market risks.
+            </p>
+          </div>
+
+          {/* Copyright */}
+          <div className="mt-8 pt-4 border-t border-gray-200 flex justify-between items-center text-sm text-gray-500">
+            <p>Bluestock Fintech All Rights Reserved.</p>
+            <p>Made with ❤️ in Pune, Maharashtra</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,57 +1,59 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 
 const Header = () => {
   const { user, signOut } = useAuth();
-  const navigate = useNavigate();
 
-  const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about-section');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/');
+  const scrollToFooter = () => {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-purple-600 hover:scale-105 transition-transform duration-300">
-              BlueStock
-            </Link>
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-md flex items-center justify-center">
+              <span className="text-white font-bold text-sm">B</span>
+            </div>
+            <span className="text-xl font-bold text-gray-900">BLUESTOCK</span>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('top')}
-              className="text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105 hover:shadow-sm px-3 py-2 rounded-md"
+            <button 
+              onClick={scrollToTop}
+              className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
             >
               Home
             </button>
-            <button
-              onClick={() => scrollToSection('about-section')}
-              className="text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105 hover:shadow-sm px-3 py-2 rounded-md"
+            <button 
+              onClick={scrollToAbout}
+              className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
             >
               About
             </button>
-            <button
-              onClick={() => scrollToSection('footer')}
-              className="text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105 hover:shadow-sm px-3 py-2 rounded-md"
+            <button 
+              onClick={scrollToFooter}
+              className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
             >
               Contact
             </button>
@@ -60,41 +62,44 @@ const Header = () => {
           {/* Auth Buttons */}
           <div className="flex items-center space-x-4">
             {user ? (
-              <div className="flex items-center space-x-4">
+              <>
                 <Link to="/dashboard">
                   <Button 
                     variant="outline" 
-                    className="hover:scale-105 transition-all duration-300 hover:shadow-md"
+                    className="transition-all duration-300 hover:scale-105 hover:shadow-md"
                   >
                     Dashboard
                   </Button>
                 </Link>
+                <Link to="/ipo-management">
+                  <Button className="bg-purple-600 hover:bg-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    Manage IPOs
+                  </Button>
+                </Link>
                 <Button 
-                  onClick={handleSignOut}
-                  variant="destructive"
-                  className="hover:scale-105 transition-all duration-300 hover:shadow-md"
+                  onClick={signOut}
+                  variant="outline"
+                  className="transition-all duration-300 hover:scale-105 hover:shadow-md hover:border-red-500 hover:text-red-500"
                 >
                   Logout
                 </Button>
-              </div>
+              </>
             ) : (
-              <div className="flex items-center space-x-4">
+              <>
                 <Link to="/auth">
                   <Button 
                     variant="outline"
-                    className="hover:scale-105 transition-all duration-300 hover:shadow-md"
+                    className="transition-all duration-300 hover:scale-105 hover:shadow-md"
                   >
                     Sign In
                   </Button>
                 </Link>
                 <Link to="/admin/login">
-                  <Button 
-                    className="bg-purple-600 hover:bg-purple-700 hover:scale-105 transition-all duration-300 hover:shadow-md"
-                  >
-                    Admin Portal
+                  <Button className="bg-purple-600 hover:bg-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    Admin Login
                   </Button>
                 </Link>
-              </div>
+              </>
             )}
           </div>
         </div>
