@@ -215,7 +215,8 @@ const AdminRegisterIPO = () => {
               </div>
               <div className="flex space-x-3">
                 <Button 
-                  onClick={handleSubmit}
+                  type="submit"
+                  form="ipo-form"
                   disabled={loading}
                   className="bg-blue-600 hover:bg-blue-700 text-white hover:scale-105 transition-all duration-200"
                 >
@@ -223,6 +224,7 @@ const AdminRegisterIPO = () => {
                   {loading ? 'Saving...' : (isEditing ? 'Update IPO' : 'Register IPO')}
                 </Button>
                 <Button 
+                  type="button"
                   onClick={handleCancel}
                   variant="outline"
                   className="hover:scale-105 transition-all duration-200"
@@ -233,7 +235,7 @@ const AdminRegisterIPO = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-6 space-y-8">
+            <form id="ipo-form" onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-6 space-y-8">
               {/* Basic Information */}
               <div>
                 <h2 className="text-lg font-semibold text-gray-900 mb-4">Basic Information</h2>
